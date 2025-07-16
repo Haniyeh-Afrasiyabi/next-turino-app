@@ -1,0 +1,36 @@
+.loginMobile {
+  cursor: pointer;
+}
+
+.loginWeb {
+  display: none;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.2rem;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .loginWeb {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+    cursor: pointer;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 8px;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .loginMobile {
+    display: none;
+  }
+}

@@ -1,5 +1,12 @@
 import localFont from "next/font/local";
+import TanstackQueryProvider from "@/components/partials/provider/TanstackQueryProvider";
+import { LoginProvider } from "@/core/context/LoginContext";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
+import Header from "@/components/modules/Header";
+import Footer from "@/components/modules/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,9 +26,26 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <LoginProvider>
+          <TanstackQueryProvider>
+            <Header />
+            {children}
+            <ToastContainer
+              position="top-right"
+              autoClose={10000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={true}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+            <Footer />
+          </TanstackQueryProvider>
+        </LoginProvider>
       </body>
     </html>
   );
