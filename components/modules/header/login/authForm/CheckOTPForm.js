@@ -3,13 +3,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "@/core/schema/login";
 
 import React, { useContext } from "react";
-import styles from "../modules/LoginModal.module.css";
+import styles from "../authForm/CheckOTPForm.module.css";
 import { LoginContext } from "@/core/context/LoginContext";
-import Close from "../icons/Close";
+import Close from "../../../../icons/Close";
 import { login } from "@/core/services/config";
 import { toast } from "react-toastify";
 
-function LoginModal() {
+function CheckOTPForm() {
   const { state, dispatch } = useContext(LoginContext);
 
   if (!state.loginModal?.show) return null;
@@ -87,4 +87,4 @@ function LoginModal() {
   );
 }
 
-export default LoginModal;
+export default CheckOTPForm;

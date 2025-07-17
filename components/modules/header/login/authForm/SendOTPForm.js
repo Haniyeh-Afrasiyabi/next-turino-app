@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { LoginContext } from "@/core/context/LoginContext";
 import OtpInput from "react18-input-otp";
-import styles from "../modules/LoginModal.module.css"; // یا فایل جدید
+import styles from "../authForm/CheckOTPForm.module.css"; // یا فایل جدید
 import { checkOtp } from "@/core/services/config";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 
-function LoginCodeModal() {
+function SendOTPForm() {
   const { state, dispatch } = useContext(LoginContext);
   const [otp, setOtp] = useState("");
 
@@ -70,4 +70,4 @@ function LoginCodeModal() {
   );
 }
 
-export default LoginCodeModal;
+export default SendOTPForm;
