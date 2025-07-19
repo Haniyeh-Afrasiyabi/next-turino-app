@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 968px) {
   .loginWeb {
     display: flex;
     align-items: center;
