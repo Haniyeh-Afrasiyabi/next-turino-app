@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import Header from "@/components/modules/header/Header";
 import Footer from "@/components/modules/footer/Footer";
+import HamburgerMenuProvider from "@/core/context/HamburgerMenuContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,24 +29,26 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <LoginProvider>
-          <TanstackQueryProvider>
-            <Header />
-            {children}
-            <ToastContainer
-              position="top-right"
-              autoClose={10000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={true}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
-            <Footer />
-          </TanstackQueryProvider>
-        </LoginProvider>
+        <HamburgerMenuProvider>
+          <LoginProvider>
+            <TanstackQueryProvider>
+              <Header />
+              {children}
+              <ToastContainer
+                position="top-right"
+                autoClose={10000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={true}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+              />
+              <Footer />
+            </TanstackQueryProvider>
+          </LoginProvider>
+        </HamburgerMenuProvider>
       </body>
     </html>
   );

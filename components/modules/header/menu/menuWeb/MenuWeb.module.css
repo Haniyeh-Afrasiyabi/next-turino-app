@@ -1,0 +1,33 @@
+.headerRight {
+  display: none;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  padding: 0 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  list-style: none;
+}
+
+.menu li:first-child {
+  color: var(--color-primary);
+}
+
+@media (min-width: 968px) {
+ 
+
+  .HamburgerMenu {
+    display: none;
+  }
+
+  .headerRight {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+}
