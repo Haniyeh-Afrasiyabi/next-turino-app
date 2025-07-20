@@ -1,0 +1,16 @@
+.container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* background-color: blueviolet; */
+  padding: 0 2rem;
+
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+@media (min-width: 968px) {
+  .container {
+    padding: 1rem 8rem;
+  }
+}

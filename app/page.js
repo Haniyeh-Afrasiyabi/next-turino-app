@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <h1>
-        صفحه اصلی
         <HomePage />
       </h1>
     </div>

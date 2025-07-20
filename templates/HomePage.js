@@ -1,10 +1,10 @@
-// import LoginModal from "../modules/LoginModal";
+import TourList from "@/components/modules/tour/tourList/TourList";
+import styles from "./HomePage.module.css";
 
 function HomePage() {
   return (
-    <div>
-      <h1>HomePage</h1>
-      {/* <LoginModal /> */}
+    <div className={styles.container}>
+      <TourList />
     </div>
   );
 }
