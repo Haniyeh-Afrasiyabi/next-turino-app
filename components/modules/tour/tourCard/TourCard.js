@@ -1,9 +1,9 @@
 import Image from "next/image";
-import styles from "./TourCard.module.css"
+import Link from "next/link";
+import styles from "./TourCard.module.css";
 function TourCard({ tour }) {
   return (
     <div className={styles.container}>
-        
       <Image
         src={tour.image}
         alt={tour.title}
@@ -20,7 +20,9 @@ function TourCard({ tour }) {
           قیمت: {Number(tour.price).toLocaleString()} تومان
         </p>
         <button className="bg-green-600 text-white px-4 py-1 mt-2 rounded">
-          رزرو
+          <Link href={`/tours/${tour?.id}`} className="bg-blue-500 text-white">
+            رزرو
+          </Link>
         </button>
       </div>
     </div>
@@ -28,4 +30,3 @@ function TourCard({ tour }) {
 }
 
 export default TourCard;
-
