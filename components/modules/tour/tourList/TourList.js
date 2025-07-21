@@ -83,36 +83,39 @@ export default function TourList() {
 
   return (
     <section className={styles.container}>
-      <h2>جستجوی تور</h2>
+      <div className={styles.searchContainer}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.searchForm}>
+          <div className={styles.originDestination}>
+            <select {...register("origin")}>
+              <option value="">انتخاب مبدا</option>
+              {origins.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
 
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.searchForm}>
-        <select {...register("origin")}>
-          <option value="">انتخاب مبدا</option>
-          {origins.map((city) => (
-            <option key={city} value={city}>
-              {city}
-            </option>
-          ))}
-        </select>
+            <select {...register("destination")}>
+              <option value="">انتخاب مقصد</option>
+              {destinations.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        <select {...register("destination")}>
-          <option value="">انتخاب مقصد</option>
-          {destinations.map((city) => (
-            <option key={city} value={city}>
-              {city}
-            </option>
-          ))}
-        </select>
+          <DatePicker
+            className={styles.DatePicker}
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            placeholderText="تاریخ حرکت"
+            dateFormat="yyyy-MM-dd"
+          />
 
-        <DatePicker
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          placeholderText="تاریخ حرکت"
-          dateFormat="yyyy-MM-dd"
-        />
-
-        <button type="submit">جستجو</button>
-      </form>
+          <button type="submit">جستجو</button>
+        </form>
+      </div>
 
       <div className={styles.tourList}>
         {filteredTours.length ? (
