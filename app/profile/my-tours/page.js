@@ -1,9 +1,33 @@
-import React from 'react'
+"use client";
+import { useEffect, useState } from "react";
+import { userTours } from "@/core/services/config";
 
-function page() {
+function UserTours() {
+  const [tours, setTours] = useState([]);
+
+  useEffect(() => {
+    const fetchUserTours = async () => {
+      try {
+        const data = await userTours();
+        setTours(data);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchUserTours();
+  }, []);
+
   return (
-    <div>my-tours</div>
-  )
+    <div>
+      <h3>my-tours</h3>
+      <div>
+        {tours.map((tour) => (
+          <div key={tour.id}>{tour.title || "🛑 عنوان موجود نیست"}</div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default page
+export default UserTours;

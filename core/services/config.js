@@ -14,6 +14,11 @@ export const checkOtp = async (data) => {
 };
 
 export const submitOrder = async (passengerData) => {
-  const response = await api.post(`/order`, passengerData);
+  const response = await api.post(`${API_BASE_URL}/order`, passengerData);
+  return response.data;
+};
+
+export const userTours  = async (data) => {
+  const response = await api.get(`${API_BASE_URL}/user/tours`, data);
   return response.data;
 };

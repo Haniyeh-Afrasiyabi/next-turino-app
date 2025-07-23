@@ -1,5 +1,11 @@
-function page() {
+"use client"
+
+function Transactions() {
+
+
+
+
   return <div>transactions</div>;
 }
 
-export default page;
+export default Transactions;
