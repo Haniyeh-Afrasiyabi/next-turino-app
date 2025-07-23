@@ -12,3 +12,8 @@ export const checkOtp = async (data) => {
   const response = await api.post(`${API_BASE_URL}/auth/check-otp`, data);
   return response.data;
 };
+
+export const submitOrder = async (passengerData) => {
+  const response = await api.post(`/order`, passengerData);
+  return response.data;
+};
