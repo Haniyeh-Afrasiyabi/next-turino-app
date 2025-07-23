@@ -22,3 +22,8 @@ export const userTours  = async (data) => {
   const response = await api.get(`${API_BASE_URL}/user/tours`, data);
   return response.data;
 };
+
+export const userTransactions  = async (data) => {
+  const response = await api.get(`${API_BASE_URL}/user/transactions`, data);
+  return response.data;
+};
