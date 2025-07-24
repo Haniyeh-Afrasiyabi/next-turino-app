@@ -27,3 +27,13 @@ export const userTransactions  = async (data) => {
   const response = await api.get(`${API_BASE_URL}/user/transactions`, data);
   return response.data;
 };
+
+export const userProfile  = async (data) => {
+  const response = await api.get(`${API_BASE_URL}/user/profile`, data);
+  return response.data;
+};
+
+export const editProfile  = async (data) => {
+  const response = await api.put(`${API_BASE_URL}/user/profile`, data);
+  return response.data;
+};
