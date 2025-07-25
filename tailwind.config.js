@@ -13,6 +13,10 @@ module.exports = {
       fontFamily: {
         yekan: ["Yekan", "sans-serif"],
       },
+      colors: {
+        primary: "#28a745",
+        gray: "#595959",
+      },
     },
   },
   plugins: [],
