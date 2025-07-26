@@ -14,13 +14,16 @@
     "js-cookie": "^3.0.5",
     "next": "14.2.30",
     "react": "^18",
+    "react-date-object": "^2.1.9",
     "react-datepicker": "^8.4.0",
     "react-dom": "^18",
-    "react-hook-form": "^7.60.0",
+    "react-hook-form": "^7.61.1",
+    "react-multi-date-picker": "^4.5.2",
     "react-query": "^3.39.3",
     "react-toastify": "^11.0.5",
     "react18-input-otp": "^1.1.4",
-    "yup": "^1.6.1"
+    "yup": "^1.6.1",
+    "zaman": "^2.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",

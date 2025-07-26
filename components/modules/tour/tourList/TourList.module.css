@@ -2,16 +2,11 @@
   margin-top: 1rem;
 }
 
-.searchContainer{
-    /* background-color: blueviolet; */
-}
-
 .searchForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 8px;
-  /* background-color: aqua; */
 }
 
 .originDestination {
@@ -80,7 +75,7 @@
     border: 1px solid #00000026;
     border-radius: 12px;
     flex-direction: row;
-   
+
     width: 85%;
     margin: auto;
     /* background-color: aqua; */
