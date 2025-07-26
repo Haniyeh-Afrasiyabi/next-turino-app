@@ -19,6 +19,9 @@ module.exports = {
         gray2: "#00000026",
         gray3: "#00000080",
       },
+      screens:{
+        sm445: "600px"
+      }
     },
   },
   plugins: [],

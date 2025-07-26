@@ -8,7 +8,7 @@ export default async function HomePage() {
   return (
     <>
       <BannerTorino />
-      <div className="overflow-hidden flex flex-col px-8 md:px-30">
+      <div className="overflow-hidden flex flex-col px-8 md:px-30 max-w-screen-2xl mx-auto">
         <h3 className="mt-6 text-center text-base text-gray md:text-[1.75rem] font-semibold">
           <span className="text-primary"> تورینو</span> برگزار کننده بهترین تور
           های داخلی و خارجی

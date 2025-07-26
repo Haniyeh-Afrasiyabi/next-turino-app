@@ -1,15 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./TourCard.module.css";
 function TourCard({ tour }) {
   return (
-    <div className={styles.container}>
+    <div className="w-full sm445:w-[327.44px]">
       <Image
         src={tour.image}
         alt={tour.title}
         width={100}
         height={100}
-        className="w-full h-40 object-cover"
+        className="w-full h-40 object-fill"
       />
       <div className="p-4 space-y-1">
         <h3 className="font-bold">{tour.title}</h3>
