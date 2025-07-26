@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 function TourCard({ tour }) {
   return (
-    <div className="w-full sm445:w-[327.44px]">
+    <div className="w-full sm445:w-[20.465rem] border border-gray4 rounded-xl">
       <Image
         src={tour.image}
         alt={tour.title}

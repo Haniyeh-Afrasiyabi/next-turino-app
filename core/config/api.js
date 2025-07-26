@@ -71,7 +71,6 @@ const api = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
-  withCredentials: true, // اگه کوکی می‌فرستی
 });
 
 // Add Authorization Header
