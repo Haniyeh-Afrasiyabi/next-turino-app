@@ -3,7 +3,6 @@ import { LoginContext } from "@/core/context/LoginContext";
 import SignIn from "../../../icons/SignIn";
 import Profile from "../../../icons/Profile";
 import ArrowDown from "../../../icons/ArrowDown";
-import styles from "./Login.module.css";
 
 function Login({ openDropDownHandler }) {
   const { state, dispatch } = useContext(LoginContext);
@@ -13,7 +12,10 @@ function Login({ openDropDownHandler }) {
     <>
       {user ? (
         <div>
-          <div className={styles.profile} onClick={openDropDownHandler}>
+          <div
+            onClick={openDropDownHandler}
+            className="flex justify-between items-center gap-1 text-primary cursor-pointer"
+          >
             <Profile />
             {user.mobile}
             <ArrowDown />
@@ -21,18 +23,21 @@ function Login({ openDropDownHandler }) {
         </div>
       ) : (
         <div>
+          {/* موبایل */}
           <div
-            className={styles.loginMobile}
+            className="cursor-pointer lg:hidden"
             onClick={() => dispatch({ type: "ShowLoginModal" })}
           >
             <SignIn />
           </div>
+
+          {/* دسکتاپ */}
           <button
-            className={styles.loginWeb}
             onClick={() => dispatch({ type: "ShowLoginModal" })}
+            className="hidden lg:flex items-center gap-1 cursor-pointer border-2 border-primary rounded-lg px-3 py-1 bg-white text-primary text-lg font-medium"
           >
             <Profile />
-            ورود | ثبت نام
+            ورود | ثبت‌نام
           </button>
         </div>
       )}

@@ -4,14 +4,11 @@ import { useContext, useState } from "react";
 import LoginModal from "./login/authForm/CheckOTPForm";
 import LoginCodeModal from "./login/authForm/SendOTPForm";
 import HamburgerMenu from "../../icons/HamburgerMenu";
-import styles from "./Header.module.css";
 import Login from "./login/Login";
 import DropDownProfile from "./login/open&removeProfile/DropDownProfile";
-
 import { HamburgerMenuContext } from "@/core/context/HamburgerMenuContext";
 import MenuWeb from "./menu/menuWeb/MenuWeb";
 import HamburgerModal from "./menu/hamburgerModal/HamburgerModal";
-// import Torino from "@/components/icons/Torino";
 
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,15 +16,17 @@ function Header() {
 
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
   return (
-    <div className={styles.container}>
+    <div className="flex justify-between items-center z-10 px-6 py-7 shadow-md lg:px-28 lg:py-4">
       <div
-        className={styles.HamburgerMenu}
+        className="cursor-pointer lg:hidden"
         onClick={() => dispatch({ type: "ShowHamburgerMenu" })}
       >
         <HamburgerMenu />
       </div>
 
-      <MenuWeb />
+      <div className=" hidden lg:block">
+        <MenuWeb />
+      </div>
 
       <Login openDropDownHandler={toggleDropdown} />
       <DropDownProfile
