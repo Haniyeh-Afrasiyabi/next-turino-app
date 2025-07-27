@@ -1,25 +1,3 @@
-// import Link from "next/link";
-
-// export default function ProfileLayout({ children }) {
-//   return (
-//     <div className="px-7 pb-4  md:grid md:grid-cols-[1fr_3fr] md:gap-12 md:py-8 md:px-28 bg-yellow-400 ">
-//       <ul className=" flex justify-between border-b-2 border-gray9  ">
-//         <li className="font-normal text-base text-black1 border-b-1 py-3">
-//           <Link href="/profile">پروفایل من</Link>
-//         </li>
-//         <li className="font-normal text-base text-black1 border-b-1 py-3">
-//           <Link href="/profile/my-tours">تور ها من</Link>
-//         </li>
-//         <li className="font-normal text-base text-black1 border-b-1 py-3">
-//           <Link href="/profile/transactions">تراکنش ها</Link>
-//         </li>
-//       </ul>
-
-//       <main className="bg-blue-400 mt-6">{children}</main>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import Link from "next/link";
@@ -35,17 +13,17 @@ export default function ProfileLayout({ children }) {
   ];
 
   return (
-    <div className="px-7 pb-4 md:grid md:grid-cols-[1fr_3fr] md:gap-12 md:py-8 md:px-28 ">
-      <ul className="flex justify-between border-b-2 border-gray9 md:border md:border-gray9 md:rounded-xl    md:flex-col">
+    <div className="px-7 pb-4 lg:grid lg:grid-cols-[1fr_3fr] lg:gap-8 lg:py-8 lg:px-28 ">
+      <ul className="flex justify-between border-b-2 border-gray9 lg:border lg:border-gray9 lg:rounded-xl  lg:flex-col lg:max-h-44">
         {links.map(({ href, label }) => {
           const isActive = pathname === href;
 
           return (
             <li
               key={href}
-              className={`font-normal text-base border-b py-3 md:px-3 md:py-4 md:border-b-1 md:border-gray9 md:rounded-xl    ${
+              className={`font-normal text-base border-b py-3 lg:px-3 lg:py-4 lg:border-b-1 lg:border-gray9 lg:rounded-xl    ${
                 isActive
-                  ? "text-primary border-primary md:bg-green2"
+                  ? "text-primary border-primary lg:bg-green2"
                   : "text-black1 border-transparent"
               }`}
             >
@@ -55,7 +33,7 @@ export default function ProfileLayout({ children }) {
         })}
       </ul>
 
-      <main className="bg-blue-400 mt-6">{children}</main>
+      <main className=" mt-6 lg:mt-1">{children}</main>
     </div>
   );
 }

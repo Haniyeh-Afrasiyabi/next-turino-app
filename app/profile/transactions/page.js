@@ -24,7 +24,6 @@ function UserTransactions() {
   }, []);
   return (
     <div>
-      <h3>transactions</h3>
       <div>
         {loading ? (
           <p>در حال بارگذاری...</p>
@@ -33,14 +32,46 @@ function UserTransactions() {
         ) : transactions.length === 0 ? (
           <p>تراکنشی وجود ندارد</p>
         ) : (
-          transactions.map((transaction) => (
-            <div key={transaction.id}>
-              <p>{transaction.amount}</p>
-              <p>
-                {new Date(transaction.createdAt).toLocaleDateString("fa-IR")}
-              </p>
-            </div>
-          ))
+          <div className="overflow-hidden rounded-xl border border-gray9">
+            <table className="min-w-full divide-y divide-gray9 text-sm ">
+              <thead className="bg-gray-100 text-gray-700 bg-white1 ">
+                <tr>
+                  <th className="text-center px-4 py-3 font-normal text-base">
+                    تاریخ و ساعت
+                  </th>
+                  <th className="text-center px-4 py-3 font-normal text-base">
+                    مبلغ(تومان)
+                  </th>
+                  <th className="hidden text-center px-4 py-3 font-normal text-base lg:block">
+                    نوع تراکنش
+                  </th>
+                  <th className="text-center px-4 py-3 font-normal text-base">
+                    شماره سفارش
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {transactions.map((transaction) => (
+                  <tr key={transaction.id} className="hover:bg-gray-50">
+                    <td className="px-4 py-3 text-gray-800 text-center text-sm font-light">
+                      {new Date(transaction.createdAt).toLocaleDateString(
+                        "fa-IR"
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-gray-800 text-center text-sm font-light">
+                      {transaction.amount}
+                    </td>
+                    <td className="hidden px-4 py-3 text-gray-800 text-center text-sm font-light lg:block">
+                      ثبت نام در تور گردشگری
+                    </td>
+                    <td className="px-4 py-3 text-gray-800 text-center text-sm font-light">
+                      سفارش ۱۲۰۵۴۹۰۲
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
     </div>
