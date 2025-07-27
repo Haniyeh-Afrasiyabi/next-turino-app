@@ -27,6 +27,7 @@ module.exports = {
         black1 :"#282828",
         complementry: "#009ECA",
         
+        
       },
       screens: {
         sm445: "600px",
