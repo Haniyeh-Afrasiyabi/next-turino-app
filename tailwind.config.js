@@ -26,6 +26,7 @@ module.exports = {
         white1: "#F3F3F3",
         black1 :"#282828",
         green2:"#28A74540",
+        
         complementry: "#009ECA",
         
         

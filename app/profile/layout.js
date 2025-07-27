@@ -13,7 +13,7 @@ export default function ProfileLayout({ children }) {
   ];
 
   return (
-    <div className="px-7 pb-4 lg:grid lg:grid-cols-[1fr_3fr] lg:gap-8 lg:py-8 lg:px-28 ">
+    <div className="px-7 pb-4 lg:grid lg:grid-cols-[1fr_3fr] lg:gap-5 lg:py-8 lg:px-28 ">
       <ul className="flex justify-between border-b-2 border-gray9 lg:border lg:border-gray9 lg:rounded-xl  lg:flex-col lg:max-h-44">
         {links.map(({ href, label }) => {
           const isActive = pathname === href;
