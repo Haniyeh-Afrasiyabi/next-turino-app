@@ -1,7 +1,8 @@
 "use client";
 
-import { createContext, useReducer,useEffect } from "react";
+import { createContext, useReducer, useEffect } from "react";
 import Cookies from "js-cookie";
+import { useState } from "react";
 
 export const LoginContext = createContext();
 
@@ -35,12 +36,16 @@ const reducer = (state, action) => {
 
 export function LoginProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [initialized, setInitialized] = useState(false);
   useEffect(() => {
     const userCookie = Cookies.get("user");
     if (userCookie) {
       dispatch({ type: "SetUser", payload: JSON.parse(userCookie) });
     }
+    setInitialized(true);
   }, []);
+
+  if (!initialized) return null; //  جلوی رندر تا آماده شدن اطلاعات تا زمانی که یوزر از کوکی خونده نشده، هیچی نشون نده
 
   return (
     <LoginContext.Provider value={{ state, dispatch }}>

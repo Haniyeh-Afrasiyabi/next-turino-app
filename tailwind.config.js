@@ -23,9 +23,11 @@ module.exports = {
         gray7: "#7D7D7D",
         gray8: "#444444",
         gray9:"#00000033",
+        gray10:"#00000040",
         white1: "#F3F3F3",
         black1 :"#282828",
         green2:"#28A74540",
+        secondory:"#10411B",
         
         complementry: "#009ECA",
         

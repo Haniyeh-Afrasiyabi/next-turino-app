@@ -1,3 +1,4 @@
+"use client";
 import { useContext } from "react";
 import { LoginContext } from "@/core/context/LoginContext";
 import SignIn from "../../../icons/SignIn";

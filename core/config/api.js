@@ -109,8 +109,11 @@ api.interceptors.response.use(
           originalRequest.headers["Authorization"] = `Bearer ${accessToken}`;
           return api(originalRequest);
         } else {
-          setCookie("accessToken", "", 0);
-          setCookie("refreshToken", "", 0);
+          // setCookie("accessToken", "", 0);
+          // setCookie("refreshToken", "", 0);
+          // فعلاً برای تست، پاک نکن تا دلیل خروج یوزر رو بفهمیم
+          // یا فقط پیام نمایش بده، نه پاک کردن کوکی
+          console.warn("Refresh token failed. Not clearing cookies for now.");
         }
       } catch (err) {
         return Promise.reject(err);
