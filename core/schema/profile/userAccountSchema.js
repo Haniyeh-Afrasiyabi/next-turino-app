@@ -1,5 +1,5 @@
 import { object, string } from "yup";
 
-export let profileSchema = object({
+export let userAccountSchema = object({
   email: string().email(),
 });
