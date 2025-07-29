@@ -3,6 +3,7 @@ import { getTours } from "@/core/services/config";
 import FilterTours from "../modules/tour/filterTours/FilterTours";
 import PhoneShopping from "../modules/phoneShopping/PhoneShopping";
 import WhyTurino from "../modules/whyTurino/WhyTurino";
+import Features from "../modules/features/Features";
 
 export default async function HomePage() {
   const tours = await getTours();
@@ -20,6 +21,7 @@ export default async function HomePage() {
         <PhoneShopping />
         <WhyTurino />
       </div>
+      <Features />
     </>
   );
 }
