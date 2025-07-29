@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Error({ error, reset }) {
   useEffect(() => {
@@ -8,17 +9,39 @@ export default function Error({ error, reset }) {
   }, [error]);
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center text-center px-4">
-      <h2 className="text-3xl text-red-600 font-bold mb-4">مشکلی پیش آمده 😞</h2>
-      <p className="mb-6 text-gray-700">
-        متأسفانه ارتباط با سرور برقرار نشد یا مشکلی هنگام بارگذاری داده‌ها رخ داده است.
-      </p>
-      <button
-        onClick={() => reset()}
-        className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-dark transition"
-      >
-        تلاش مجدد
-      </button>
+    <div className="flex flex-col pb-16 pt-7 md:flex-row-reverse justify-around lg:w-[80%] m-auto items-center  ">
+      <div>
+        <Image
+          src="/images/ErrorServer/ErrorServer.webp"
+          width={450}
+          height={450}
+          alt="error 404"
+        />
+      </div>
+      <div className="flex flex-col gap-16 justify-center items-center">
+        <h2 className="text-3xl lg:text-4xl font-semibold black1">
+          اتصال با سرور برقرار نیست!
+        </h2>
+        <p className="text-2xl font-semibold trxt-black1">
+          لطفا بعدا دوباره امتحان کنید.
+        </p>
+
+        {/* <button
+          onClick={() => reset()}
+          className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-dark transition"
+        >
+          تلاش مجدد
+        </button> */}
+      </div>
     </div>
   );
+}
+
+{
+  /* <button
+  onClick={() => reset()}
+  className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-dark transition"
+>
+  تلاش مجدد
+</button> */
 }
