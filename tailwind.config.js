@@ -29,6 +29,7 @@ module.exports = {
         green2:"#28A74540",
         secondory:"#10411B",
         lightGreen:"#28A745",
+        lightGreen2:"#D8FFE1",
         complementry: "#009ECA",
         
         
