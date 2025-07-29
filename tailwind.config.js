@@ -28,7 +28,7 @@ module.exports = {
         black1 :"#282828",
         green2:"#28A74540",
         secondory:"#10411B",
-        
+        lightGreen:"#28A745",
         complementry: "#009ECA",
         
         
