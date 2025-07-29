@@ -3,7 +3,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "@/core/schema/login";
 
 import React, { useContext } from "react";
-import styles from "../authForm/CheckOTPForm.module.css";
 import { LoginContext } from "@/core/context/LoginContext";
 import Close from "../../../../icons/Close";
 import { login } from "@/core/services/config";
@@ -59,28 +58,54 @@ function CheckOTPForm() {
 
   return (
     <div
-      className={styles.overlay}
+      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[1000]"
       onClick={() => {
         dispatch({ type: "CloseLoginModal" });
       }}
     >
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <div
+        className="flex flex-col w-[472px] h-[338px] bg-white p-5 rounded-lg text-center  justify-between relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col h-full gap-3 "
+        >
           <div
             onClick={() => {
               dispatch({ type: "CloseLoginModal" });
             }}
+            className="self-end cursor-pointer"
           >
             <Close />
           </div>
-          <h2>ورود به تورینو</h2>
-          <div>
-            <p>شماره موبایل خود را وارد کنید</p>
-            <input placeholder="0919***8439" {...register("number")} />
-            {errors.number && <span>{errors.number?.message}</span>}
-          </div>
 
-          <input type="submit" />
+          <div className="h-full flex flex-col gap-5 justify-between p-3 ">
+            <h2 className="text-3xl font-semibold text-black1">
+              ورود به تورینو
+            </h2>
+            <div className="flex flex-col gap-2">
+              <p className="font-light text-base text-right">
+                شماره موبایل خود را وارد کنید
+              </p>
+              <input
+                className="border border-gray10  rounded-md w-full p-2 focus:outline-none"
+                placeholder="۸۴۳۹***۰۹۱۹"
+                {...register("number")}
+              />
+              {errors.number && (
+                <span className="text-red-500">{errors.number?.message}</span>
+              )}
+            </div>
+
+            {/* <input type="submit" /> */}
+            <button
+              type="submit"
+              className="bg-primary rounded-md  p-3 text-white"
+            >
+              ارسال کد تایید
+            </button>
+          </div>
         </form>
       </div>
     </div>
