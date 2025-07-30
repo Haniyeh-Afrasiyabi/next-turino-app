@@ -1,5 +1,5 @@
 "use client";
-
+import withAuth from "@/components/modules/hoc/withAuth";
 import { useEffect, useState } from "react";
 import { userTransactions } from "@/core/services/config";
 
@@ -78,4 +78,4 @@ function UserTransactions() {
   );
 }
 
-export default UserTransactions;
+export default withAuth(UserTransactions);

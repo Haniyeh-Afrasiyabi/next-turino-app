@@ -1,4 +1,5 @@
 "use client";
+import withAuth from "@/components/modules/hoc/withAuth";
 import { useEffect, useState } from "react";
 import { userTours } from "@/core/services/config";
 
@@ -104,4 +105,4 @@ function UserTours() {
   );
 }
 
-export default UserTours;
+export default withAuth(UserTours);

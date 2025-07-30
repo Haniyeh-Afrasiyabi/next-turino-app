@@ -1,5 +1,6 @@
 "use client";
 
+import withAuth from "@/components/modules/hoc/withAuth";
 import BankAccount from "@/components/modules/profile/bankAccount/BankAccount";
 import Personal from "@/components/modules/profile/personal/Personal";
 import UserAccount from "@/components/modules/profile/userAccount/UserAccount";
@@ -14,4 +15,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default withAuth(Profile);

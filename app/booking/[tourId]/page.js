@@ -1,5 +1,5 @@
 "use client";
-
+import withAuth from "@/components/modules/hoc/withAuth";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { orderSchema } from "@/core/schema/order";
@@ -15,7 +15,7 @@ import { getTourById } from "@/core/services/config";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 
-export default function BookingPage() {
+function BookingPage() {
   const params = useParams();
   const [tour, setTour] = useState(null);
   const router = useRouter();
@@ -161,3 +161,4 @@ export default function BookingPage() {
     </div>
   );
 }
+export default withAuth(BookingPage);
