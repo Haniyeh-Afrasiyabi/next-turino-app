@@ -31,6 +31,7 @@ module.exports = {
         lightGreen:"#28A745",
         lightGreen2:"#D8FFE1",
         complementry: "#009ECA",
+        lightRed:"#D40000",
         
         
       },

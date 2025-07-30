@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import styles from "./DropDownProfile.module.css";
 import { LoginContext } from "@/core/context/LoginContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -18,18 +17,25 @@ function DropDownProfile({ isOpen, onClose }) {
     removeCookie("user");
     dispatch({ type: "SetUser", payload: null });
     onClose(); // بستن dropdown
-    router.push("/"); // یا برو به هر صفحه‌ای که خواستی
+    router.push("/");
   };
 
   return (
-    <div className={styles.dropdown}>
-      <p className={styles.mobile}>{user.mobile}</p>
-      <hr />
-      <Link href="/profile" className={styles.option} onClick={onClose}>
+    <div className="flex flex-col justify-start   absolute left-0 top-14 lg:top-14 lg:left-20  bg-white  shadow-md rounded-lg z-10 p-3 min-w-[190px] text-right space-y-2">
+      <p className="pr-5  bg-white1">{user.mobile}</p>
+
+      <Link
+        href="/profile"
+        className="font-normal text-sm text-black1"
+        onClick={onClose}
+      >
         🧾 اطلاعات حساب کاربری
       </Link>
 
-      <button className={styles.logout} onClick={logoutHandler}>
+      <button
+        className="text-right font-normal text-sm text-lightRed"
+        onClick={logoutHandler}
+      >
         🚪 خروج از حساب کاربری
       </button>
     </div>
