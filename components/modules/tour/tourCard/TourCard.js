@@ -25,11 +25,12 @@ function TourCard({ tour }) {
         </div>
 
         <div className="flex items-center px-2 pb-2 justify-between border-t-2 border-gray4">
-          <button className="bg-green-600 text-white px-4 py-1 mt-2 rounded w-24 text-base font-normal">
-            <Link href={`/tours/${tour?.id}`} className=" text-white">
+          <Link href={`/tours/${tour?.id}`} className=" text-white">
+            <button className="bg-green-600 text-white px-4 py-1 mt-2 rounded w-24 text-base font-normal">
               رزرو
-            </Link>
-          </button>
+            </button>
+          </Link>
+
           <p className="flex items-center gap-1 font-normal  text-base ">
             <span className="text-complementry">
               {Number(tour.price).toLocaleString("fa-IR")}

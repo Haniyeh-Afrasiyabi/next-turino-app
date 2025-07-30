@@ -1,8 +1,8 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-import DatePicker, { Calendar } from "react-multi-date-picker";
+import { useState, useMemo } from "react";
+import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import Location from "@/components/icons/Location";
@@ -13,8 +13,14 @@ export default function SearchForm({ tours, onFilter }) {
   const { register, handleSubmit } = useForm();
   const [selectedDate, setSelectedDate] = useState(null);
 
-  const origins = [...new Set(tours.map((t) => t.origin.name))];
-  const destinations = [...new Set(tours.map((t) => t.destination.name))];
+  const origins = useMemo(
+    () => [...new Set(tours.map((t) => t.origin.name))],
+    [tours]
+  );
+  const destinations = useMemo(
+    () => [...new Set(tours.map((t) => t.destination.name))],
+    [tours]
+  );
 
   const onSubmit = (data) => {
     let filtered = [...tours];
@@ -90,18 +96,6 @@ export default function SearchForm({ tours, onFilter }) {
           containerClassName="w-full"
         />
       </div>
-
-      {/* <DatePicker
-        calendar={persian}
-        locale={persian_fa}
-        value={selectedDate}
-        onChange={setSelectedDate}
-        inputClass="border border-gray2 text-gray3 p-2 rounded-xl text-center w-full md:rounded-none md:border-0 md:border-r-2 md:text-right "
-        placeholder="تاریخ"
-        format="YYYY/MM/DD"
-        calendarPosition="bottom-right"
-        containerClassName="w-full md:w-2/4"
-      /> */}
 
       <button
         type="submit"

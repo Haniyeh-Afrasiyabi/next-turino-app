@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Slider from "./Slider";
 
 function WhyTurino() {

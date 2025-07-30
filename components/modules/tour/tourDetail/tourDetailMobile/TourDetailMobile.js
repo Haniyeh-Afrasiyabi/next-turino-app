@@ -13,6 +13,7 @@ import MedalStar from "@/components/icons/MedalStar";
 import Capacity from "@/components/icons/Capacity";
 import Security from "@/components/icons/Security";
 import Bus from "@/components/icons/Bus";
+import Spinner from "@/components/partials/loading/Spinner";
 
 export default function TourDetailMobile() {
   const [tour, setTour] = useState(null);
@@ -49,7 +50,8 @@ export default function TourDetailMobile() {
     }
   };
 
-  if (!tour) return <p>در حال بارگذاری...</p>;
+  //loading
+  if (!tour) return <Spinner />;
 
   return (
     <div className="w-full bg-white1 md:pt-7 md:pb-10  ">

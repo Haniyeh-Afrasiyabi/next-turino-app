@@ -15,6 +15,7 @@ import Security from "@/components/icons/Security";
 import Bus from "@/components/icons/Bus";
 import Routing from "@/components/icons/Routing";
 import CalendarBlack from "@/components/icons/CalendarBlack";
+import Spinner from "@/components/partials/loading/Spinner";
 
 export default function TourDetailDesktop() {
   const [tour, setTour] = useState(null);
@@ -51,7 +52,8 @@ export default function TourDetailDesktop() {
     }
   };
 
-  if (!tour) return <p>در حال بارگذاری...</p>;
+  //loading
+  if (!tour) return <Spinner />;
 
   return (
     <div className="w-full bg-white1 md:pt-7 md:pb-10  ">

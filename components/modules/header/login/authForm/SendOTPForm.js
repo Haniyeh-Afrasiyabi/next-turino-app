@@ -1,3 +1,4 @@
+"use client"
 import React, { useContext, useState } from "react";
 import { LoginContext } from "@/core/context/LoginContext";
 import OtpInput from "react18-input-otp";
@@ -20,9 +21,7 @@ function SendOTPForm() {
         code: otp,
       });
       console.log(result);
-      // Cookies.set("accessToken", result.accessToken, { expires: 365 });
-      // Cookies.set("refreshToken", result.refreshToken, { expires: 365 });
-      // Cookies.set("user", JSON.stringify(result.user), { expires: 365 });
+
       Cookies.set("accessToken", result.accessToken, {
         expires: 30, // روز
         path: "/", // برای اینکه در همه صفحات قابل دسترس باشه

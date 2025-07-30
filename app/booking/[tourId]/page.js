@@ -14,6 +14,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 import { getTourById } from "@/core/services/config";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
+import Spinner from "@/components/partials/loading/Spinner";
 
 function BookingPage() {
   const params = useParams();
@@ -65,6 +66,9 @@ function BookingPage() {
     }
   };
 
+  //loading
+  if (!tour) return <Spinner />;
+
   return (
     <div className="w-full lg:bg-white1 md:pt-7 md:pb-10  ">
       <div className="lg:bg-white1">
@@ -79,55 +83,64 @@ function BookingPage() {
             </h2>
 
             <div className="flex flex-col gap-5 lg:flex-row lg:flex-wrap">
-              <input
-                {...register("fullName")}
-                placeholder="نام و نام خانوادگی"
-                className="border border-gray3 rounded-lg py-4 px-2 focus:outline-none lg:w-[16rem]"
-              />
-              {errors.fullName && (
-                <p className="text-red-500">{errors.fullName.message}</p>
-              )}
-
-              <input
-                {...register("nationalCode")}
-                placeholder="کد ملی"
-                className="border border-gray3 rounded-lg py-4 px-2 focus:outline-none lg:w-[16rem]"
-              />
-              {errors.nationalCode && (
-                <p className="text-red-500">{errors.nationalCode.message}</p>
-              )}
+              <div className=" flex flex-col lg:flex-row items-center gap-2">
+                <input
+                  {...register("fullName")}
+                  placeholder="نام و نام خانوادگی"
+                  className="w-full border border-gray3 rounded-lg py-4 px-2 focus:outline-none lg:w-[16rem]"
+                />
+                {errors.fullName && (
+                  <p className="text-red-500">{errors.fullName.message}</p>
+                )}
+              </div>
+              <div className="flex flex-col lg:flex-row items-center gap-2">
+                <input
+                  {...register("nationalCode")}
+                  placeholder="کد ملی"
+                  className="w-full border border-gray3 rounded-lg py-4 px-2 focus:outline-none lg:w-[16rem]"
+                />
+                {errors.nationalCode && (
+                  <p className="text-red-500">{errors.nationalCode.message}</p>
+                )}
+              </div>
 
               {/* ✅ تقویم شمسی */}
-              <Controller
-                control={control}
-                name="birthDate"
-                render={({ field }) => (
-                  <DatePicker
-                    {...field}
-                    value={field.value}
-                    onChange={(date) => field.onChange(date?.toDate())}
-                    calendar={persian}
-                    locale={persian_fa}
-                    placeholder="تاریخ تولد"
-                    inputClass="border border-gray3 rounded-lg py-4 px-2 focus:outline-none w-full lg:w-[16rem]"
-                  />
+              <div className=" flex flex-col lg:flex-row  gap-2">
+                <Controller
+                  control={control}
+                  name="birthDate"
+                  render={({ field }) => (
+                    <DatePicker
+                      {...field}
+                      value={field.value}
+                      onChange={(date) => field.onChange(date?.toDate())}
+                      calendar={persian}
+                      locale={persian_fa}
+                      placeholder="تاریخ تولد"
+                      inputClass=" border border-gray3 rounded-lg py-4 px-2 focus:outline-none w-full lg:w-[16rem]"
+                    />
+                  )}
+                />
+                {errors.birthDate && (
+                  <p className="text-center text-red-500">
+                    {errors.birthDate.message}
+                  </p>
                 )}
-              />
-              {errors.birthDate && (
-                <p className="text-red-500">{errors.birthDate.message}</p>
-              )}
+              </div>
 
-              <select
-                {...register("gender")}
-                className="border border-gray3 rounded-lg py-4 px-2 focus:outline-none cursor-pointer text-gray3 lg:w-[16rem]"
-              >
-                <option value=""> جنسیت</option>
-                <option value="male">مرد</option>
-                <option value="female">زن</option>
-              </select>
-              {errors.gender && (
-                <p className="text-red-500">{errors.gender.message}</p>
-              )}
+              <div className="flex flex-col lg:flex-row items-center gap-2">
+                <select
+                  {...register("gender")}
+                  className="w-full border border-gray3 rounded-lg py-4 px-2 focus:outline-none cursor-pointer text-gray3 lg:w-[16rem]"
+                >
+                  <option value=""> جنسیت</option>
+                  <option value="male">مرد</option>
+                  <option value="female">زن</option>
+                </select>
+                {errors.gender && (
+                  <p className="text-red-500">{errors.gender.message}</p>
+                )}
+              </div>
             </div>
           </div>
 
