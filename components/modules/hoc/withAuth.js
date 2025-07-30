@@ -14,7 +14,7 @@ export default function withAuth(Component) {
       if (!user) {
         router.replace("/"); // برگرداندن به صفحه اصلی
       }
-    }, [user]);
+    }, [user, router]);
 
     if (!user) return null; // تا زمانی که ریدایرکت انجام بشه، چیزی نمایش نده
 
