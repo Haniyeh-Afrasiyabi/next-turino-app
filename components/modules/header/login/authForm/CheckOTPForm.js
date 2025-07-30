@@ -11,8 +11,6 @@ import { toast } from "react-toastify";
 function CheckOTPForm() {
   const { state, dispatch } = useContext(LoginContext);
 
-  if (!state.loginModal?.show) return null;
-
   const {
     register,
     handleSubmit,
@@ -41,6 +39,8 @@ function CheckOTPForm() {
       toast.error("خطا در هنگام ورود ❌");
     }
   };
+
+  if (!state.loginModal?.show) return null; // باید هوک رو همیشه بدون شرط فراخوانی کنیم، پس شرط رو بعدش میگذاریم
 
   return (
     <div
