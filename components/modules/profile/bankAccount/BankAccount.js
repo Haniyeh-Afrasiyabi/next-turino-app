@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { bankAccountSchema } from "@/core/schema/profile/BankAccountSchema";
+import { bankAccountSchema } from "@/core/schema/profile/bankAccountSchema";
 import { editProfile } from "@/core/services/config";
 import { userProfile } from "@/core/services/config";
 import { useEffect, useState } from "react";
