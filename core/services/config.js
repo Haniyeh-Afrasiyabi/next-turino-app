@@ -11,7 +11,7 @@ export const checkOtp = async (data) => {
 };
 
 export const getTours = async () => {
-  const res = await fetch("http://localhost:6500/tour", { cache: "no-store" });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/tour`, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to fetch tours");
   return res.json();
 };
