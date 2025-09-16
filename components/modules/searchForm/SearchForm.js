@@ -59,7 +59,7 @@ export default function SearchForm({ tours, onFilter }) {
       <div className="flex gap-[0.5rem] w-full  ">
         <div className="flex items-center gap-1 border border-gray2 text-gray3 cursor-pointer text-center p-2 rounded-xl w-6/12 md:border-0 md:text-right ">
           <Location />
-          <select {...register("origin")} className="w-full   ">
+          <select {...register("origin")} className="w-full bg-white   ">
             <option value="">مبدا</option>
             {origins.map((city) => (
               <option key={city} value={city}>
@@ -71,7 +71,7 @@ export default function SearchForm({ tours, onFilter }) {
 
         <div className="flex items-center gap-1 border border-gray2 text-gray3 cursor-pointer text-center p-2 rounded-xl w-6/12 md:rounded-none md:border-0 md:border-r-2 md:text-right">
           <Destination />
-          <select {...register("destination")} className="w-full ">
+          <select {...register("destination")} className="w-full bg-white ">
             <option value="">مقصد</option>
             {destinations.map((city) => (
               <option key={city} value={city}>
